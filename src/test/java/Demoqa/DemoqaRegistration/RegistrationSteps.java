@@ -27,8 +27,8 @@ public class RegistrationSteps extends Base {
 		sendData(register_page_elements.getPhone(), userData.get(0).get(2));
 		sendData(register_page_elements.getUserName(), userData.get(0).get(3));
 		sendData(register_page_elements.getEmail(), userData.get(0).get(4));
-		sendData(register_page_elements.getPw(), userData.get(0).get(4));
-		sendData(register_page_elements.getPwConfirm(), userData.get(0).get(4));
+		sendData(register_page_elements.getPw(), userData.get(0).get(5));
+		sendData(register_page_elements.getPwConfirm(), userData.get(0).get(6));
 	   
 	}
 
@@ -43,7 +43,7 @@ public class RegistrationSteps extends Base {
 	 Assert.assertEquals("leomessi", register_page_elements.getPw().getAttribute("value"));
 	 Assert.assertEquals("leomessi", register_page_elements.getPwConfirm().getAttribute("value"));
 	 
-	 quit(driver);
+	 //quit(driver);
 	}
 
 	@When("^The user choose maritalstatus as single$")

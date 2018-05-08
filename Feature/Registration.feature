@@ -7,7 +7,6 @@ Background:
 @textbox
 Scenario: Verify all textboxes
 When The user enters firstName, lastName, phonenumber, username, email, password, confirmpassword
-| firstName| lastName | phonenumber | username | email| password | confirmpassword |
 | Lionel | Messi | 8383788880 | LeoMessi | messimail@gmail.com | leomessi | leomessi |
 Then The user verifies the entered text in firstName, lastName, phonenumber, username, email, password, confirmpassword
 

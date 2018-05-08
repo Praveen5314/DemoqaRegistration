@@ -28,7 +28,7 @@ formatter.match({
   "location": "RegistrationSteps.the_user_in_demoqa_website()"
 });
 formatter.result({
-  "duration": 15515379965,
+  "duration": 15541128168,
   "status": "passed"
 });
 formatter.scenario({
@@ -51,18 +51,6 @@ formatter.step({
   "rows": [
     {
       "cells": [
-        "firstName",
-        "lastName",
-        "phonenumber",
-        "username",
-        "email",
-        "password",
-        "confirmpassword"
-      ],
-      "line": 10
-    },
-    {
-      "cells": [
         "Lionel",
         "Messi",
         "8383788880",
@@ -71,13 +59,13 @@ formatter.step({
         "leomessi",
         "leomessi"
       ],
-      "line": 11
+      "line": 10
     }
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 12,
+  "line": 11,
   "name": "The user verifies the entered text in firstName, lastName, phonenumber, username, email, password, confirmpassword",
   "keyword": "Then "
 });
@@ -85,16 +73,15 @@ formatter.match({
   "location": "RegistrationSteps.the_user_enters_firstName_lastName_phonenumber_username_email_password_confirmpassword(DataTable)"
 });
 formatter.result({
-  "duration": 1959827994,
+  "duration": 2147834939,
   "status": "passed"
 });
 formatter.match({
   "location": "RegistrationSteps.the_user_verifies_the_entered_text_in_firstName_lastName_phonenumber_username_email_password_confirmpassword()"
 });
 formatter.result({
-  "duration": 35406590,
-  "error_message": "org.junit.ComparisonFailure: expected:\u003c[Lionel]\u003e but was:\u003c[firstName]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat Demoqa.DemoqaRegistration.RegistrationSteps.the_user_verifies_the_entered_text_in_firstName_lastName_phonenumber_username_email_password_confirmpassword(RegistrationSteps.java:38)\r\n\tat ✽.Then The user verifies the entered text in firstName, lastName, phonenumber, username, email, password, confirmpassword(Registration.feature:12)\r\n",
-  "status": "failed"
+  "duration": 181784683,
+  "status": "passed"
 });
 formatter.background({
   "line": 4,
@@ -112,11 +99,11 @@ formatter.match({
   "location": "RegistrationSteps.the_user_in_demoqa_website()"
 });
 formatter.result({
-  "duration": 12128503504,
+  "duration": 27567937851,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 15,
+  "line": 14,
   "name": "Verify maritalstatus radiobutton",
   "description": "",
   "id": "demoqa-registration-details;verify-maritalstatus-radiobutton",
@@ -124,18 +111,18 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 14,
+      "line": 13,
       "name": "@radio"
     }
   ]
 });
 formatter.step({
-  "line": 16,
+  "line": 15,
   "name": "The user choose maritalstatus as single",
   "keyword": "When "
 });
 formatter.step({
-  "line": 17,
+  "line": 16,
   "name": "The user verifies the selected maritalstatus",
   "keyword": "Then "
 });
@@ -143,14 +130,14 @@ formatter.match({
   "location": "RegistrationSteps.the_user_choose_maritalstatus_as_single()"
 });
 formatter.result({
-  "duration": 139734562,
+  "duration": 121649340,
   "status": "passed"
 });
 formatter.match({
   "location": "RegistrationSteps.the_user_verifies_the_selected_maritalstatus()"
 });
 formatter.result({
-  "duration": 1563869825,
+  "duration": 1434728553,
   "status": "passed"
 });
 formatter.background({
@@ -169,11 +156,11 @@ formatter.match({
   "location": "RegistrationSteps.the_user_in_demoqa_website()"
 });
 formatter.result({
-  "duration": 10341797311,
+  "duration": 14796508261,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 20,
+  "line": 19,
   "name": "Verify hobby checkbox",
   "description": "",
   "id": "demoqa-registration-details;verify-hobby-checkbox",
@@ -181,18 +168,18 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 19,
+      "line": 18,
       "name": "@checkbox"
     }
   ]
 });
 formatter.step({
-  "line": 21,
+  "line": 20,
   "name": "The user choose hobby as dance and reading",
   "keyword": "When "
 });
 formatter.step({
-  "line": 22,
+  "line": 21,
   "name": "The user verifies the selected hobby",
   "keyword": "Then "
 });
@@ -200,14 +187,14 @@ formatter.match({
   "location": "RegistrationSteps.the_user_choose_hobby_as_dance_and_reading()"
 });
 formatter.result({
-  "duration": 243898816,
+  "duration": 224618696,
   "status": "passed"
 });
 formatter.match({
   "location": "RegistrationSteps.the_user_verifies_the_selected_hobby()"
 });
 formatter.result({
-  "duration": 914788430,
+  "duration": 842651822,
   "status": "passed"
 });
 formatter.background({
@@ -226,11 +213,11 @@ formatter.match({
   "location": "RegistrationSteps.the_user_in_demoqa_website()"
 });
 formatter.result({
-  "duration": 12854160955,
+  "duration": 13684660500,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 25,
+  "line": 24,
   "name": "Verify the country dropdown",
   "description": "",
   "id": "demoqa-registration-details;verify-the-country-dropdown",
@@ -238,18 +225,18 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 24,
+      "line": 23,
       "name": "@dropdown"
     }
   ]
 });
 formatter.step({
-  "line": 26,
+  "line": 25,
   "name": "The user select the country as India",
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 26,
   "name": "The user verifies the country India selected",
   "keyword": "Then "
 });
@@ -257,14 +244,14 @@ formatter.match({
   "location": "RegistrationSteps.the_user_select_the_country_as_India()"
 });
 formatter.result({
-  "duration": 2058724436,
+  "duration": 2193371033,
   "status": "passed"
 });
 formatter.match({
   "location": "RegistrationSteps.the_user_verifies_the_country_India_selected()"
 });
 formatter.result({
-  "duration": 875062127,
+  "duration": 867132799,
   "status": "passed"
 });
 });
