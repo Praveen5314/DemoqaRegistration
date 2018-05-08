@@ -2,27 +2,29 @@
 Feature: Demoqa Registration Details
 
 Background: 
- Given the user in Demoqa Website
+ Given The user in demoqa website
 
 @textbox
-Scenario: Verify all Textboxes
-When the user enters FirstName, LastName, PhoneNumber, UserName and Email
-Then the user verifies the entered text in FirstName, LastName, PhoneNumber, UserName and Email
+Scenario: Verify all textboxes
+When The user enters firstName, lastName, phonenumber, username, email, password, confirmpassword
+| firstName| lastName | phonenumber | username | email| password | confirmpassword |
+| Lionel | Messi | 8383788880 | LeoMessi | messimail@gmail.com | leomessi | leomessi |
+Then The user verifies the entered text in firstName, lastName, phonenumber, username, email, password, confirmpassword
 
 @radio
-Scenario: Verify MaritalStatus RadioButton 
-When the user choose MaritalStatusRadio 
-Then the user verifies the selected MaritalStatusRadio
+Scenario: Verify maritalstatus radiobutton 
+When The user choose maritalstatus as single 
+Then The user verifies the selected maritalstatus
 
 @checkbox
-Scenario: Verify Hobby Checkbox
-When the user choose Hobby as Dance and Reading
-Then the user verifies the selected Hobby
+Scenario: Verify hobby checkbox
+When The user choose hobby as dance and reading
+Then The user verifies the selected hobby
 
 @dropdown
-Scenario: Verify the Country Dropdown 
-When the user select the Country
-Then the user verifies the Country selected
+Scenario: Verify the country dropdown 
+When The user select the country as India
+Then The user verifies the country India selected
  
 
 

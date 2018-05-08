@@ -1,8 +1,11 @@
 package Demoqa.DemoqaRegistration;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -10,75 +13,81 @@ import cucumber.api.java.en.When;
 public class RegistrationSteps extends Base {
 	String selectedCountry;
 
-	@Given("^the user in Demoqa Website$")
-	public void the_user_in_Demoqa_Website()  {
+	@Given("^The user in demoqa website$")
+	public void the_user_in_demoqa_website()  {
 		driver=getDriver("http://demoqa.com/registration/");
 	}
 
-	@When("^the user enters FirstName, LastName, PhoneNumber, UserName and Email$")
-	public void the_user_enters_FirstName_LastName_PhoneNumber_UserName_and_Email()  {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		sendData(pomObj.getFirstName(),"Lionel");
-		sendData(pomObj.getLastName(), "Messi");
-		sendData(pomObj.getPhone(), "7827373738");
-		sendData(pomObj.getUserName(), "LeoMessi");
-		sendData(pomObj.getEmail(), "LeoMessi@gmail.com");
+	@When("^The user enters firstName, lastName, phonenumber, username, email, password, confirmpassword$")
+	public void the_user_enters_firstName_lastName_phonenumber_username_email_password_confirmpassword(DataTable txtboxValues)  {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		List<List<String>> userData = txtboxValues.asLists(String.class);
+		sendData(register_page_elements.getFirstName(),userData.get(0).get(0));
+		sendData(register_page_elements.getLastName(), userData.get(0).get(1));
+		sendData(register_page_elements.getPhone(), userData.get(0).get(2));
+		sendData(register_page_elements.getUserName(), userData.get(0).get(3));
+		sendData(register_page_elements.getEmail(), userData.get(0).get(4));
+		sendData(register_page_elements.getPw(), userData.get(0).get(4));
+		sendData(register_page_elements.getPwConfirm(), userData.get(0).get(4));
 	   
 	}
 
-	@Then("^the user verifies the entered text in FirstName, LastName, PhoneNumber, UserName and Email$")
-	public void the_user_verifies_the_entered_text_in_FirstName_LastName_PhoneNumber_UserName_and_Email()  {
-	 RegistrationPOM pomObj=new RegistrationPOM();
-	 Assert.assertEquals("Lionel", pomObj.getFirstName().getAttribute("value"));
-	 Assert.assertEquals("Messi", pomObj.getLastName().getAttribute("value"));
-	 Assert.assertEquals("7827373738", pomObj.getPhone().getAttribute("value"));
-	 Assert.assertEquals("LeoMessi", pomObj.getUserName().getAttribute("value"));
-	 Assert.assertEquals("LeoMessi@gmail.com", pomObj.getEmail().getAttribute("value"));
+	@Then("^The user verifies the entered text in firstName, lastName, phonenumber, username, email, password, confirmpassword$")
+	public void the_user_verifies_the_entered_text_in_firstName_lastName_phonenumber_username_email_password_confirmpassword()  {
+	 RegistrationPOM register_page_elements=new RegistrationPOM();
+	 Assert.assertEquals("Lionel", register_page_elements.getFirstName().getAttribute("value"));
+	 Assert.assertEquals("Messi", register_page_elements.getLastName().getAttribute("value"));
+	 Assert.assertEquals("8383788880", register_page_elements.getPhone().getAttribute("value"));
+	 Assert.assertEquals("LeoMessi", register_page_elements.getUserName().getAttribute("value"));
+	 Assert.assertEquals("messimail@gmail.com", register_page_elements.getEmail().getAttribute("value"));
+	 Assert.assertEquals("leomessi", register_page_elements.getPw().getAttribute("value"));
+	 Assert.assertEquals("leomessi", register_page_elements.getPwConfirm().getAttribute("value"));
+	 
 	 quit(driver);
 	}
 
-	@When("^the user choose MaritalStatusRadio$")
-	public void the_user_choose_MaritalStatusRadio()  {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		click(pomObj.getStatusSingle());
+	@When("^The user choose maritalstatus as single$")
+	public void the_user_choose_maritalstatus_as_single()  {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		click(register_page_elements.getStatusSingle());
 		
 	}
 
-	@Then("^the user verifies the selected MaritalStatusRadio$")
-	public void the_user_verifies_the_selected_MaritalStatusRadio() {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		Assert.assertTrue(pomObj.getStatusSingle().isSelected());
+	@Then("^The user verifies the selected maritalstatus$")
+	public void the_user_verifies_the_selected_maritalstatus() {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		Assert.assertTrue(register_page_elements.getStatusSingle().isSelected());
 		quit(driver);
 	}
 
-	@When("^the user choose Hobby as Dance and Reading$")
-	public void the_user_choose_Hobby_as_Dance_and_Reading() {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		click(pomObj.getHobbyDance());
-		click(pomObj.getHobbyReading());
+	@When("^The user choose hobby as dance and reading$")
+	public void the_user_choose_hobby_as_dance_and_reading() {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		click(register_page_elements.getHobbyDance());
+		click(register_page_elements.getHobbyReading());
 		
 }
 
-	@Then("^the user verifies the selected Hobby$")
-	public void the_user_verifies_the_selected_Hobby()  {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		Assert.assertTrue(pomObj.getHobbyDance().isSelected());
-		Assert.assertTrue(pomObj.getHobbyReading().isSelected());
+	@Then("^The user verifies the selected hobby$")
+	public void the_user_verifies_the_selected_hobby()  {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		Assert.assertTrue(register_page_elements.getHobbyDance().isSelected());
+		Assert.assertTrue(register_page_elements.getHobbyReading().isSelected());
 		quit(driver);
 	}
 
-	@When("^the user select the Country$")
-	public void the_user_select_the_Country() {
-		RegistrationPOM pomObj=new RegistrationPOM();
-		Select countrySelect=new Select(pomObj.getDropDownCountry());
+	@When("^The user select the country as India$")
+	public void the_user_select_the_country_as_India() {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
+		Select countrySelect=new Select(register_page_elements.getDropDownCountry());
 		countrySelect.selectByVisibleText("India");
 		selectedCountry=countrySelect.getFirstSelectedOption().getText();
 		
 	}
 
-	@Then("^the user verifies the Country selected$")
-	public void the_user_verifies_the_Country_selected()  {
-		RegistrationPOM pomObj=new RegistrationPOM();
+	@Then("^The user verifies the country India selected$")
+	public void the_user_verifies_the_country_India_selected()  {
+		RegistrationPOM register_page_elements=new RegistrationPOM();
 		Assert.assertEquals("India", selectedCountry);
 		quit(driver);
 	}
